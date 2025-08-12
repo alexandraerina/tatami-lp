@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: default;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
     background-size: 400px 300px;
     background-attachment: fixed;
     overflow-x: hidden;
+    cursor: default;
 }
 
 /* アニメーション */
@@ -413,7 +415,7 @@ body {
     background: #ffffff;
     background-image: 
         radial-gradient(circle at 90% 10%, rgba(247, 214, 213, 0.06) 0%, transparent 40%);
-    padding: 2.5rem;
+    padding: 2rem 2.5rem;
     border-radius: 20px;
     border-left: 4px solid #9e6e73;
     box-shadow: 0 5px 15px rgba(158, 110, 115, 0.15);
@@ -462,6 +464,51 @@ body {
     color: #6b7280;
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+.voice-player-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+
+.voice-player-avatar {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 3px 10px rgba(158, 110, 115, 0.3);
+    background: linear-gradient(135deg, #9e6e73, #bac4bb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.voice-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.voice-text {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.voice-author {
+    color: #6b7280;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
 }
 
 /* チェックリスト */
@@ -1070,6 +1117,30 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .voice-card {
+        padding: 1.5rem 2rem;
+    }
+    
+    .voice-player-info {
+        gap: 1rem;
+    }
+    
+    .voice-player-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+        margin-top: 0.1rem;
+    }
+    
+    .voice-text {
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .voice-author {
+        font-size: 0.8rem;
+    }
+    
     .checklist {
         grid-template-columns: 1fr;
     }
@@ -1183,4 +1254,11 @@ body {
     .qa-answer p {
         font-size: 0.95rem;
     }
+}
+
+/* カーソルスタイル設定 */
+a, button, .discord-btn-main, .carousel-btn, .carousel-indicator, 
+.checklist-item, .link-card, .voice-card, .feature-card, 
+.event-card, .qa-item, .experience-item {
+    cursor: pointer !important;
 }
