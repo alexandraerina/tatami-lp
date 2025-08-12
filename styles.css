@@ -4,7 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: default;
+    cursor: pointer !important;
+    user-select: none;
 }
 
 body {
@@ -20,7 +21,8 @@ body {
     background-size: 400px 300px;
     background-attachment: fixed;
     overflow-x: hidden;
-    cursor: default;
+    cursor: pointer !important;
+    user-select: none;
 }
 
 /* アニメーション */
@@ -1261,4 +1263,10 @@ a, button, .discord-btn-main, .carousel-btn, .carousel-indicator,
 .checklist-item, .link-card, .voice-card, .feature-card, 
 .event-card, .qa-item, .experience-item {
     cursor: pointer !important;
+}
+
+/* テキスト要素もポインターカーソルに設定 */
+p, h1, h2, h3, h4, h5, h6, span, div, li {
+    cursor: pointer !important;
+    user-select: none !important;
 }
