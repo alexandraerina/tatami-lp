@@ -402,7 +402,7 @@ body {
         radial-gradient(circle at 75% 75%, rgba(158, 110, 115, 0.1) 0%, transparent 35%),
         radial-gradient(circle at 50% 10%, rgba(186, 196, 187, 0.1) 0%, transparent 30%);
     padding: 5rem 0;
-    margin: 4rem 0;
+    margin: 4rem 0 0 0;
     position: relative;
 }
 
