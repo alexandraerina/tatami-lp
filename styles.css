@@ -87,7 +87,7 @@ body {
     position: relative;
     background: linear-gradient(135deg, #fef4f5 0%, #f0ebe6 100%);
     color: #4a4a4a;
-    overflow: hidden;
+    overflow: hidden; /* 桜が画面外に出ないように */
 }
 
 .hero::before {
