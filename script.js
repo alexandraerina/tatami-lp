@@ -72,7 +72,7 @@ class SakuraAnimation {
         const startX = Math.random() * (window.innerWidth + 100) - 50;
         const size = Math.random() * 0.4 + 0.6; // 0.6 - 1.0
         const duration = Math.random() * 10 + 15; // 15 - 25秒（より遅く）
-        const delay = Math.random() * 5; // 0-5秒の遅延
+        const delay = Math.random() * 2; // 0-2秒の遅延（短縮）
         const drift = (Math.random() - 0.5) * 250; // 左右の揺れ
         const rotationSpeed = Math.random() * 0.4 + 0.2; // 0.2 - 0.6（より遅い回転）
         const swayIntensity = Math.random() * 80 + 40; // 揺れの強さ 40-120px
@@ -101,9 +101,9 @@ class SakuraAnimation {
     }
 
     startAnimation() {
-        // 初期の花びらを生成（より多く）
+        // 初期の花びらを生成（すぐに開始、より短い間隔）
         for (let i = 0; i < 15; i++) {
-            setTimeout(() => this.createPetal(), i * 600);
+            setTimeout(() => this.createPetal(), i * 200); // 600から200に短縮
         }
 
         // 継続的に花びらを生成（より頻繁に）
@@ -111,7 +111,7 @@ class SakuraAnimation {
             if (document.querySelectorAll('.sakura-petal').length < this.maxPetals) {
                 this.createPetal();
             }
-        }, 1500); // 2000から1500に短縮
+        }, 1500);
     }
 
     addStyles() {
