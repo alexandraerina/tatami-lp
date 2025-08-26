@@ -72,7 +72,7 @@ class SakuraAnimation {
         const startX = Math.random() * (window.innerWidth + 100) - 50;
         const size = Math.random() * 0.4 + 0.6; // 0.6 - 1.0
         const duration = Math.random() * 10 + 15; // 15 - 25秒（より遅く）
-        const delay = Math.random() * 2; // 0-2秒の遅延（短縮）
+        const delay = Math.random() * 0.3; // 0-0.3秒の短い遅延
         const drift = (Math.random() - 0.5) * 250; // 左右の揺れ
         const rotationSpeed = Math.random() * 0.4 + 0.2; // 0.2 - 0.6（より遅い回転）
         const swayIntensity = Math.random() * 80 + 40; // 揺れの強さ 40-120px
@@ -101,9 +101,9 @@ class SakuraAnimation {
     }
 
     startAnimation() {
-        // 初期の花びらを生成（すぐに開始、より短い間隔）
-        for (let i = 0; i < 15; i++) {
-            setTimeout(() => this.createPetal(), i * 200); // 600から200に短縮
+        // 即座に初期の花びらを生成（遅延なし）
+        for (let i = 0; i < 12; i++) {
+            setTimeout(() => this.createPetal(), i * 50); // 50msごとに生成
         }
 
         // 継続的に花びらを生成（より頻繁に）
@@ -402,8 +402,21 @@ class EventCarousel {
     }
 }
 
-// DOMが読み込まれた後にカルーセルと桜アニメーションを初期化
+// ページ読み込み完了と同時に桜アニメーションを開始
 document.addEventListener('DOMContentLoaded', () => {
-    new EventCarousel();
+    // 桜のアニメーションを即座に開始
     new SakuraAnimation();
+    
+    // カルーセルも初期化
+    new EventCarousel();
 });
+
+// さらに早く開始するために、HTMLの解析が完了した時点でも開始
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new SakuraAnimation();
+    });
+} else {
+    // すでにDOMが読み込まれている場合は即座に開始
+    new SakuraAnimation();
+}

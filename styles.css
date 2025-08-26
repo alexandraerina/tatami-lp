@@ -149,15 +149,21 @@ body {
     font-weight: 500;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(158, 110, 115, 0.3);
+    box-shadow: 5px 5px 4px rgba(138, 94, 99, 0.5);
     border: none;
     cursor: pointer;
+    position: relative;
 }
 
 .discord-btn-main:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(158, 110, 115, 0.4);
+    transform: translate(2px, 2px);
+    box-shadow: none;
     background: #8a5e63;
+}
+
+.discord-btn-main:active {
+    transform: translate(5px, 5px);
+    box-shadow: 0 0 0 transparent;
 }
 
 /* コンテナ */
